@@ -1,0 +1,8 @@
+on early-fs
+    exec_start mmi-cxp-sh
+
+service mmi-cxp-sh /system/bin/init.mmi.cxp.sh
+    user root
+    oneshot
+    disabled
+

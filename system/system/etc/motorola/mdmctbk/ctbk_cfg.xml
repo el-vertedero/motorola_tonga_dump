@@ -1,0 +1,51 @@
+<xml>
+    <ctbk_version>22</ctbk_version>
+
+    <!-- Config wifi power table in file txpowerctrl.cfg -->
+
+    <sar_sensors>
+        <sensor type="prox_front"               index="0">PROXIMITY</sensor>
+        <sensor type="prox_back"                index="1">NULL</sensor>
+        <!--ANT position from back view-->
+        <!--Sensor channel name from front view-->
+        <sensor type="cap_bottom(Main_LMHB)"    index="2">capsense_bottom</sensor>
+        <sensor type="cap_top_left(5G_WiFi)"    index="3">capsense_top_right</sensor>
+        <sensor type="cap_top_right(Div_LMHB)"  index="4">capsense_top_left</sensor>
+        <sensor type="no sensor here"           index="5">NULL</sensor>
+        <sensor type="no sensor here"           index="6">NULL</sensor>
+    </sar_sensors>
+
+    <!--OB5 config: 00000101b (cap_bottom|cap_top_right(Div_LMHB))-->
+    <ob5_sensor_config indexBits="00101"/>
+
+    <!--Wifi TX0 config: 00000010b (cap_top_left(5G_WiFi))-->
+    <wifi_tx0_sensor_config indexBits="00010"/>
+
+    <!--Modem TX0 config: 00000101b (cap_bottom|cap_top_right(Div_LMHB))-->
+    <mdm_tx0_sensor_config indexBits="00101">
+        <support_lte_sensor_map>false</support_lte_sensor_map>
+        <lte_sensor_map>
+            <!--attribute lteBand: the lte band, "default" or "0" for other bands not specified out-->
+            <!--attribute indexBits: the index bit set of cap sensor used for the specified lte band-->
+            <lte_tx0_sensor lteBand="default"   indexBits="00001"/>
+        </lte_sensor_map>
+
+        <support_sensor_dsi_map>true</support_sensor_dsi_map>
+        <sensor_dsi_map>
+            <!--attribute indexBits: the index bit set of cap sensors, "default" or "0" for the default dsi-->
+            <!--attribute dsi: the DSI state triggerd by the cap sensors in index bit set-->
+            <dsi_tx0_sensors indexBits="default"    dsi="6"/>
+            <dsi_tx0_sensors indexBits="00001"      dsi="6"/>
+            <dsi_tx0_sensors indexBits="00100"      dsi="5"/>
+        </sensor_dsi_map>
+    </mdm_tx0_sensor_config>
+
+    <support_canada_sar>true</support_canada_sar>
+    <canada_carrier_dsi_map>
+    <canada_carrier_dsi carrier="retca" dsi="8"/> <!--Replace DSI2 with DSI8 for retca(Retail Canada)-->
+    <canada_carrier_dsi carrier="bwaca" dsi="8"/> <!--Replace DSI2 with DSI8 for bwaca(Bell Canada)-->
+    <canada_carrier_dsi carrier="tkpca" dsi="8"/> <!--Replace DSI2 with DSI8 for tkpca(Telus Canada)-->
+    <canada_carrier_dsi carrier="rcica" dsi="8"/> <!--Replace DSI2 with DSI8 for rcica(Rogers Canada)-->
+    <canada_carrier_dsi carrier="wndca" dsi="8"/> <!--Replace DSI2 with DSI8 for wndca(Freedom Canada)-->
+    </canada_carrier_dsi_map>
+</xml>

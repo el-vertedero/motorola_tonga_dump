@@ -1,0 +1,12 @@
+[Package-start]
+[Package-end]
+[Property-start]
+persist.vendor.operator.optr=OP08
+persist.vendor.operator.spec=SPEC0200
+persist.vendor.operator.seg=SEGDEFAULT
+persist.vendor.mtk_rcs_ua_support=1
+persist.vendor.mtk_uce_support=1
+persist.vendor.mtk_rcs_support=0
+persist.vendor.mtk_rtt_support=1
+persist.vendor.vzw_device_type=0
+[Property-end]
