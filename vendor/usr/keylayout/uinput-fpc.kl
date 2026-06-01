@@ -1,0 +1,9 @@
+#
+# FPC1020 Touch sensor driver
+#
+
+# fpc1020 "finger present"
+key 0x26a   SYSTEM_NAVIGATION_DOWN
+key 0x26b   SYSTEM_NAVIGATION_UP
+key 0x26c   SYSTEM_NAVIGATION_RIGHT
+key 0x26d   SYSTEM_NAVIGATION_LEFT

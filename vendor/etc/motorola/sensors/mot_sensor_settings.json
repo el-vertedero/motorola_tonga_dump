@@ -1,0 +1,98 @@
+{
+  "chopchop params": {
+      "max_gyro_rotation": 102.0,
+      "max_chop_duration_ms": 350,
+      "first_accel_threshold": 38.0,
+      "second_accel_threshold": 30.0,
+      "min_magnitude_percentage": 0.3,
+      "max_xy_percentage": 0.45,
+      "gyroless": false
+  },
+  "camgest params": {
+      "y_orient_down_thres": -4.25,
+      "y_orient_up_thres": 4.22
+  },
+  "glance params": {
+      "motion_threshold": 0.04,
+      "cool_time": 3000,
+      "gesture_allow": 23,
+      "uncover_timeout": 900
+  },
+  "ltv params": {
+      "min_accel_rotation": 19.0,
+      "accel_fast_alpha": 0.25,
+      "accel_slow_alpha": 0.0625,
+      "land_conv_cnt": 3,
+      "min_accel_rotation_wake": 8.0,
+      "non_accel_rotation_ff": 4.0,
+      "rearm_non_rotation": 8.0,
+      "rearm_min_accel_rotation": 30.0,
+      "rearm_forced_accel_rotation": 80.0,
+      "rearm_conv_cnt": 40,
+      "raw_accel_margin": 4.2
+  },
+  "offbody params": {
+      "alpha": 0.1,
+      "var_lt": 0.03,
+      "var_ht": 0.3,
+      "th_cnt": 5,
+      "st_alpha": 0.1,
+      "st_var_ht": 5.0,
+      "theta_exit": 2.0,
+      "theta_low": 180.0,
+      "theta_high": 0.0,
+      "qual_mode":false
+  },
+  "alsps": {
+      "def_config": {
+          "pgain": 1,
+          "ptime": 2816,
+          "pwtime": 150,
+          "ppulse": 48,
+          "pldrive": 7,
+          "ppulse_len": 32,
+          "ppers": 1,
+          "pBinSearch": 63,
+          "pOffsetStep": 30.32,
+          "pOffsetStepCoef": 5.05,
+          "low_coef": 0.35,
+          "high_coef": 0.7,
+          "farTh": 200,
+          "NearTh": 400,
+          "min_delta": 0,
+          "pUseOilAlgo": false
+      },
+      "variable_config":{
+          "low_coef": 0.35,
+          "high_coef": 0.7,
+          "pWTime": 150,
+          "pUseOilAlgo": false
+      },
+      "ps_algo_config":{
+          "veryNearTh": 200,
+          "veryNearCnt": 4,
+          "contaminatedTh": 150,
+          "contaminatedCnt": 16,
+          "jitterTh": 3
+      },
+      "als_coefficient":[
+          0.342,
+          0.52,
+          0.8,
+          8050,
+          19000,
+          19525,
+          0.10,
+          1.30,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+      ],
+      "fac_golden_value":{
+          "near_threshold": 400,
+          "far_threshold": 200,
+          "lux_scale": 1.0
+      }
+  }
+}

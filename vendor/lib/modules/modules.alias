@@ -1,0 +1,25 @@
+# Aliases extracted from modules themselves.
+alias of:N*T*Cchipone-tddi icnl9916_tddi_mmi
+alias of:N*T*Cchipone-tddiC* icnl9916_tddi_mmi
+alias i2c:abov_sar abov_sar_mmi_overlay_7ch
+alias of:N*T*Cabov,abov_sar_mmi_overlay_7ch abov_sar_mmi_overlay_7ch
+alias of:N*T*Cabov,abov_sar_mmi_overlay_7chC* abov_sar_mmi_overlay_7ch
+alias spi:gf_spi goodix_mtk_tee
+alias of:N*T*Cgoodix,goodix-fp goodix_mtk_tee
+alias of:N*T*Cgoodix,goodix-fpC* goodix_mtk_tee
+alias sdio:c*v037Ad018A* wmt_drv
+alias sdio:c*v037Ad018B* wmt_drv
+alias sdio:c*v037Ad018C* wmt_drv
+alias sdio:c*v037Ad6619* wmt_drv
+alias sdio:c*v037Ad020A* wmt_drv
+alias sdio:c*v037Ad020B* wmt_drv
+alias sdio:c*v037Ad020C* wmt_drv
+alias sdio:c*v037Ad5921* wmt_drv
+alias sdio:c*v037Ad6628* wmt_drv
+alias sdio:c*v037Ad6630* wmt_drv
+alias sdio:c*v037Ad6602* wmt_drv
+alias sdio:c*v037Ad6632* wmt_drv
+alias usbfunc:usbnet moto_f_usbnet
+alias of:N*T*Cfpc,fpc_spi fpc_mtk_tee
+alias of:N*T*Cfpc,fpc_spiC* fpc_mtk_tee
+alias fs-exfat exfat
