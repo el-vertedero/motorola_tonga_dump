@@ -1,0 +1,11 @@
+system_ext/apex/com.android.vndk.v30.apex
+product/priv-app/Messages/Messages.apk
+product/priv-app/VzwMessages-v8-2-3-5/VzwMessages-v8-2-3-5.apk
+product/priv-app/VzwMyVerizon-v16-3-2-398/VzwMyVerizon-v16-3-2-398.apk
+product/priv-app/MotCamera4/MotCamera4.apk
+product/priv-app/Velvet/Velvet.apk
+product/priv-app/GmsCore/GmsCore.apk
+product/app/com.amazon.mShop.android.shopping/com.amazon.mShop.android.shopping.apk
+product/app/WebViewGoogle/WebViewGoogle.apk
+fs_config_dirs
+fs_config_files

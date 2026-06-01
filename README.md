@@ -1,0 +1,14 @@
+# user 12 S3RQS32.20-42-10-9-12 7f97af release-keys
+- manufacturer: motorola
+- platform: mt6765
+- codename: tonga
+- flavor: user
+- release: 12
+- id: S3RQS32.20-42-10-9-12
+- incremental: 7f97af
+- tags: release-keys
+- fingerprint: motorola/tonga_g/tonga:12/S3RQS32.20-42-10-9-12/7f97af:user/release-keys
+- is_ab: true
+- brand: motorola
+- branch: user-12-S3RQS32.20-42-10-9-12-7f97af-release-keys
+- repo: motorola_tonga_dump

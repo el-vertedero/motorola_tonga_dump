@@ -1,0 +1,9 @@
+system_ext/apex/com.android.vndk.v30.apex.zst
+product/priv-app/Messages/Messages.apk.zst
+product/priv-app/VzwMessages-v8-2-3-5/VzwMessages-v8-2-3-5.apk.zst
+product/priv-app/VzwMyVerizon-v16-3-2-398/VzwMyVerizon-v16-3-2-398.apk.zst
+product/priv-app/MotCamera4/MotCamera4.apk.zst
+product/priv-app/GmsCore/GmsCore.apk.zst
+product/priv-app/Velvet/Velvet.apk.zst
+product/app/com.amazon.mShop.android.shopping/com.amazon.mShop.android.shopping.apk.zst
+product/app/WebViewGoogle/WebViewGoogle.apk.zst
