@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+    <rules-enabled-for-package package="com.verizon.messaging.vzmsgs">
+        <required-managed-device package="com.verizon.messaging.vzmsgs"/>
+        <required-managed-user package="com.verizon.messaging.vzmsgs"/>
+        <disallowed-managed-device package="com.google.android.apps.messaging"/>
+        <disallowed-managed-user package="com.google.android.apps.messaging"/>
+    </rules-enabled-for-package>
+</config>

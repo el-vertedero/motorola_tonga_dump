@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<enable-disable-package>
+    <package-disable-enable-criteria package="com.motorola.android.messaging.overlay.att.testsim" carrierBased="true" default_action="disable">
+        <criteria action="enable" channel="att"/>
+        <criteria action="enable" channel="attpre"/>
+        <criteria action="enable" channel="cricket"/>
+    </package-disable-enable-criteria>
+</enable-disable-package>

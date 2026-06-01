@@ -1,0 +1,108 @@
+# Config low memory kill params
+on post-fs
+    setprop ro.lmk.kill_heaviest_task true
+    setprop ro.lmk.file_low_percentage 20
+    setprop ro.lmk.pgscan_limit 3000
+    setprop ro.lmk.swap_free_low_percentage 20
+    setprop ro.lmk.swap_util_max 75
+    setprop ro.lmk.thrashing_limit 50
+    setprop ro.lmk.thrashing_limit_decay 25
+    setprop ro.lmk.threshold_decay 50
+    setprop ro.lmk.psi_complete_stall_ms 80
+    setprop ro.lmk.psi_partial_stall_ms 50
+    setprop ro.config.compact_procstate_throttle 11,18
+    #Set default psi for frameowork
+    setprop ro.lowmemdetector.psi_low_stall_us 100000
+    setprop ro.lowmemdetector.psi_medium_stall_us 150000
+    setprop ro.lowmemdetector.psi_high_stall_us 200000
+    setprop ro.config.compact_bootcompleted true
+    # enable moto cpu boost framework.
+    setprop persist.sys.perf_fwk_enabled true
+
+on post-fs-data
+    write /sys/block/zram0/comp_algorithm lz4
+
+#Reinit lmkd to reconfigure lmkd propertise
+on property:sys.boot_completed=1
+    setprop lmkd.reinit 1
+
+on property:ro.vendor.hw.ram=4GB
+    setprop ro.config.use_compaction true
+    setprop ro.config.compact_action_1 4
+    setprop ro.config.compact_action_2 2
+    setprop ro.vendor.zram.product_swapon true
+    setprop persist.sys.zram_wb_size 1024M
+    setprop ro.zram.mark_idle_delay_mins 60
+    setprop ro.zram.first_wb_delay_mins 1440
+    setprop ro.zram.periodic_wb_delay_hours 24
+on property:ro.vendor.hw.ram=6GB
+    setprop ro.config.use_compaction false
+    setprop ro.vendor.zram.product_swapon true
+    setprop persist.sys.zram_wb_size 1536M
+    setprop ro.zram.mark_idle_delay_mins 60
+    setprop ro.zram.first_wb_delay_mins 1440
+    setprop ro.zram.periodic_wb_delay_hours 24
+on property:ro.vendor.hw.ram=8GB
+    setprop ro.config.use_compaction false
+    setprop ro.vendor.zram.product_swapon true
+    setprop persist.sys.zram_wb_size 2048M
+    setprop ro.zram.mark_idle_delay_mins 60
+    setprop ro.zram.first_wb_delay_mins 1440
+    setprop ro.zram.periodic_wb_delay_hours 24
+
+on property:sys.boot_completed=1
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 1-7
+    write /dev/cpuset/system-background/cpus 2-7
+    write /dev/cpuset/background/cpus 4-7
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor schedutil
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor schedutil
+
+on early-init
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor performance
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor performance
+
+# Disable Zram writeback
+on property:persist.sys.zram_wb_enabled=""
+    setprop persist.sys.zram_wb_enabled false
+on property:persist.sys.zram_wb_enabled=true
+    setprop persist.sys.zram_wb_enabled false
+
+on property:sys.boot_completed=1 && property:ro.vendor.zram.product_swapon=true
+    trigger sys-boot-completed-set
+
+# We want one opportunity per boot to enable zram, so we
+# use a trigger we fire from the above stanza. If
+# persist.sys.zram_wb_enabled becomes true after boot,
+# we swapon with zramwriteback; If
+# persist.sys.zram_wb_enabled false, we swapon
+# without zramwriteback
+on sys-boot-completed-set && property:persist.sys.zram_wb_enabled=true
+    write /proc/sys/vm/page-cluster 1
+    swapon_all /vendor/etc/fstab.mtk.zramwb
+    write /proc/sys/vm/swappiness 100
+    setprop sys.sysctl.swappiness 100
+
+on sys-boot-completed-set && property:persist.sys.zram_wb_enabled=false
+    write /proc/sys/vm/page-cluster 0
+    swapon_all /vendor/etc/fstab.mtk
+    write /proc/sys/vm/swappiness 100
+    setprop sys.sysctl.swappiness 100
+
+# Tune Max bg apps
+on property:ro.vendor.hw.ram=4GB && property:persist.sys.zram_wb_enabled=false
+    setprop ro.MAX_HIDDEN_APPS 24
+on property:ro.vendor.hw.ram=6GB && property:persist.sys.zram_wb_enabled=false
+    setprop ro.MAX_HIDDEN_APPS 40
+on property:ro.vendor.hw.ram=8GB && property:persist.sys.zram_wb_enabled=false
+    setprop ro.MAX_HIDDEN_APPS 48
+on property:ro.vendor.hw.ram=4GB && property:persist.sys.zram_wb_enabled=true
+    setprop ro.MAX_HIDDEN_APPS 28
+on property:ro.vendor.hw.ram=6GB && property:persist.sys.zram_wb_enabled=true
+    setprop ro.MAX_HIDDEN_APPS 48
+on property:ro.vendor.hw.ram=8GB && property:persist.sys.zram_wb_enabled=true
+    setprop ro.MAX_HIDDEN_APPS 60
+
+on property:ro.product.cpu.abi=arm64-v8a
+    setprop dalvik.vm.dex2oat64.enabled true
+

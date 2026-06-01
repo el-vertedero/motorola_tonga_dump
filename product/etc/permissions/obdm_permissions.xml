@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <permission name="com.verizon.permission.VZW_MDMI_DEBUG" >
+        <group gid="vendor_vzw_debug" />
+    </permission>
+
+    <permission name="com.verizon.permission.VZW_MDMI_COMMANDS" >
+        <group gid="vendor_vzw_commands" />
+    </permission>
+
+    <permission name="com.verizon.permission.VZW_MDMI_LTE" >
+        <group gid="vendor_vzw_lte" />
+    </permission>
+
+    <permission name="com.verizon.permission.VZW_MDMI_WIFI" >
+        <group gid="vendor_vzw_wifi" />
+    </permission>
+
+    <permission name="com.verizon.permission.VZW_MDMI_IMS" >
+        <group gid="vendor_vzw_ims" />
+    </permission>
+
+    <permission name="com.verizon.permission.VZW_MDMI_UMTS" >
+        <group gid="vendor_vzw_umts" />
+    </permission>
+
+    <permission name="com.verizon.permission.VZW_MDMI_GSM" >
+        <group gid="vendor_vzw_gsm" />
+    </permission>
+
+    <permission name="com.verizon.permission.VZW_MDMI_WCDMA" >
+        <group gid="vendor_vzw_wcdma" />
+    </permission>
+
+    <permission name="com.verizon.permission.VZW_MDMI_LTE_MW" >
+        <group gid="vendor_vzw_lte_mw" />
+    </permission>
+
+    <permission name="com.verizon.permission.VZW_MDMI_HSUPA" >
+        <group gid="vendor_vzw_hsupa" />
+    </permission>
+
+    <permission name="com.verizon.permission.VZW_MDMI_HSDPA" >
+        <group gid="vendor_vzw_hsdpa" />
+    </permission>
+</permissions>

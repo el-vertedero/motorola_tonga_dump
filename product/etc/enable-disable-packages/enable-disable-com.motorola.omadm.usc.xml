@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<enable-disable-package>
+    <package-disable-enable-criteria package="com.motorola.omadm.usc" carrierBased="true" default_action="disable">
+        <criteria action="enable" mccmnc="311220"/>
+        <criteria action="enable" mccmnc="311221"/>
+        <criteria action="enable" mccmnc="311222"/>
+        <criteria action="enable" mccmnc="311223"/>
+        <criteria action="enable" mccmnc="311224"/>
+        <criteria action="enable" mccmnc="311225"/>
+        <criteria action="enable" mccmnc="311226"/>
+        <criteria action="enable" mccmnc="311227"/>
+        <criteria action="enable" mccmnc="311228"/>
+        <criteria action="enable" mccmnc="311229"/>
+        <criteria action="enable" mccmnc="311580"/>
+        <criteria action="enable" mccmnc="311581"/>
+        <criteria action="enable" mccmnc="311582"/>
+        <criteria action="enable" mccmnc="311583"/>
+        <criteria action="enable" mccmnc="311584"/>
+        <criteria action="enable" mccmnc="311585"/>
+        <criteria action="enable" mccmnc="311586"/>
+        <criteria action="enable" mccmnc="311587"/>
+        <criteria action="enable" mccmnc="311588"/>
+        <criteria action="enable" mccmnc="311589"/>
+    </package-disable-enable-criteria>
+</enable-disable-package>
